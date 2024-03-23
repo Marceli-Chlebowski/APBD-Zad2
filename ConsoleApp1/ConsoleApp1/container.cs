@@ -5,20 +5,39 @@ namespace ConsoleApp1;
 
 public class Container : IContainer
 {
+    //zmienne
     public double Cargoweight { get; set; }
+    public double Height { get; set; }
+    public double Weight { get; set; }
+    public double Deep { get; set; }
+    public char Containertype { get; set; }
+    public double MaxCargo { get; set; }
 
-    public Container(double cargoweight)
+    public Container(double cargoweight, double height, double weight, double deep, char containertype, double maxCargo)
     {
         Cargoweight = cargoweight;
+        this.Height = height;
+        this.Weight = weight;
+        this.Deep = deep;
+        this.Containertype = containertype;
+        this.MaxCargo = maxCargo;
     }
 
+//funkcje przeladunkowa 
     public void Unload()
     {
-        throw new NotImplementedException();
+        if (Cargoweight == 0)
+            throw new NotImplementedException();
+
+        Cargoweight = 0;
     }
 
     public virtual void Load(double cargoweight)
     {
-        throw new OverfillException();
+        if (cargoweight + Cargoweight > MaxCargo)
+        {
+            throw new OverfillException();
+        }
+        Cargoweight += cargoweight;
     }
 }

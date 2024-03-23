@@ -1,16 +1,33 @@
-﻿namespace ConsoleApp1;
+﻿using ConsoleApp1.interfaces;
 
-public class LiquidContainer : Container
+namespace ConsoleApp1;
+
+public class LiquidContainer : Container, IHazardNotifier
 {
-    public LiquidContainer(double cargoweight) : base(cargoweight)
+    public string Name;
+    public readonly int Count = 0;
+    
+    //funkcja namest
+    public string Nameset(char containertype)
     {
-        Cargoweight = cargoweight;
+        string name = "KON-";
+        string type = Convert.ToString(containertype);
+        name += type;
+        name += "-";
+        name += Count;
+        return name;
     }
-
-    public override void Load(double cargoweight)
+    //constructor
+    public LiquidContainer(double cargoweight, double height, double weight, double deep, char containertype, double maxCargo) : base(cargoweight, height, weight, deep, containertype, maxCargo)
     {
+        Name = Nameset(containertype: 'L');
+        Count++;
+    }
+    
+//danger function IHazardNotifier interface
+    public void Danger(string name)
+    {
+        Console.WriteLine("Dangerous event allert" + Name);
         
     }
-
-
 }
