@@ -6,6 +6,7 @@ public class OverfillException : Exception
 {
     public OverfillException()
     {
+        Console.WriteLine("Container Overfill hazard");
     }
 
     protected OverfillException(SerializationInfo info, StreamingContext context) : base(info, context)
