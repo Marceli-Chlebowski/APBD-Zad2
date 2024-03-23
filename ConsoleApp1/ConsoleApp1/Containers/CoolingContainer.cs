@@ -4,19 +4,19 @@ namespace ConsoleApp1.Containers;
 public class CoolingContainer : Container
 {
     public string Name;
-    public readonly int Count = 1;
+    private static int Count = 1;
     public string ProductType { get; set; }
     public double Temperature { get; set; }
 
 
 //funkcja namest
-    public string Nameset(char containertype)
+    public string Nameset(char containertype, int count)
     {
         string name = "KON-";
         string type = Convert.ToString(containertype);
         name += type;
         name += "-";
-        name += Count;
+        name += Convert.ToString(count);
         return name;
     } 
     
@@ -25,7 +25,7 @@ public class CoolingContainer : Container
     {
         ProductType = productType;
         Temperature = temperature;
-        Name = Nameset(containertype: 'C');
+        Name = Nameset(containertype: 'C', Count);
         Count++;
         temperatureCheck();
        

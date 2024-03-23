@@ -5,24 +5,24 @@ namespace ConsoleApp1.Containers;
 public class LiquidContainer : Container, IHazardNotifier
 {
     public string Name;
-    public readonly int Count = 1;
+    private static int Count = 1;
     public Boolean isDangerous { get; set; }
 
 //funkcja namest
-    public string Nameset(char containertype)
+    public string Nameset(char containertype, int count)
     {
         string name = "KON-";
         string type = Convert.ToString(containertype);
         name += type;
         name += "-";
-        name += Count;
+        name += Convert.ToString(count);
         return name;
     } 
 //constructor
     public LiquidContainer(double cargoweight, double height, double weight, double deep, double maxCargo, Boolean isDangerous) : base(cargoweight, height, weight, deep, maxCargo)
     {
         this.isDangerous = isDangerous;
-        Name = Nameset(containertype: 'L');
+        Name = Nameset(containertype: 'L', Count);
         Count++;
     }
     

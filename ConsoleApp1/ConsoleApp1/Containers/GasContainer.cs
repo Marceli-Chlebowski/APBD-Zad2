@@ -6,23 +6,23 @@ public class GasContainer : Container, IHazardNotifier
 {
     public double Preassure { get; set; }
     public string Name;
-    public readonly int Count = 1;
+    private static int Count = 1;
     
     //funkcja namest
-    public string Nameset(char containertype)
+    public string Nameset(char containertype, int count)
     {
         string name = "KON-";
         string type = Convert.ToString(containertype);
         name += type;
         name += "-";
-        name += Count;
+        name += Convert.ToString(count);
         return name;
     } 
     
     public GasContainer(double cargoweight, double height, double weight, double deep, double maxCargo, double preassure) : base(cargoweight, height, weight, deep, maxCargo)
     {
         Preassure = preassure;
-        Name = Nameset(containertype: 'G');
+        Name = Nameset(containertype: 'G', Count);
         Count++;
     }
 
