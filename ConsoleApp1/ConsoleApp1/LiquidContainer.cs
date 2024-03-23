@@ -7,8 +7,8 @@ public class LiquidContainer : Container, IHazardNotifier
 {
     public string Name;
     public readonly int Count = 1;
-    public Boolean isDangerous;
-    
+    public Boolean isDangerous { get; set; }
+
 //funkcja namest
     public string Nameset(char containertype)
     {

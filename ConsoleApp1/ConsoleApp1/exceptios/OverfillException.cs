@@ -1,5 +1,4 @@
 ﻿using System.Runtime.Serialization;
-
 namespace ConsoleApp1.exceptios;
 
 public class OverfillException : Exception

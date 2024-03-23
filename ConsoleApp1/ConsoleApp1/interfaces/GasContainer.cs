@@ -1,5 +1,4 @@
 ﻿using ConsoleApp1.exceptios;
-
 namespace ConsoleApp1.interfaces;
 
 public class GasContainer : Container, IHazardNotifier

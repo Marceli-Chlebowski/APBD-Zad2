@@ -1,16 +1,14 @@
-﻿using System.Runtime.InteropServices.JavaScript;
-using ConsoleApp1.exceptios;
-
+﻿using ConsoleApp1.exceptios;
 namespace ConsoleApp1;
 
 public class CoolingContainer : Container
 {
     public string Name;
     public readonly int Count = 1;
-    public string ProductType;
-    public double Temperature;
-    
-    
+    public string ProductType { get; set; }
+    public double Temperature { get; set; }
+
+
 //funkcja namest
     public string Nameset(char containertype)
     {
