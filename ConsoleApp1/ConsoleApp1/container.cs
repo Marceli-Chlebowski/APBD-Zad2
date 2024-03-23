@@ -5,21 +5,19 @@ namespace ConsoleApp1;
 
 public class Container : IContainer
 {
-    //zmienne
+//zmienne
     public double Cargoweight { get; set; }
     public double Height { get; set; }
     public double Weight { get; set; }
     public double Deep { get; set; }
-    public char Containertype { get; set; }
     public double MaxCargo { get; set; }
 
-    public Container(double cargoweight, double height, double weight, double deep, char containertype, double maxCargo)
+    public Container(double cargoweight, double height, double weight, double deep, double maxCargo)
     {
         Cargoweight = cargoweight;
         this.Height = height;
         this.Weight = weight;
         this.Deep = deep;
-        this.Containertype = containertype;
         this.MaxCargo = maxCargo;
     }
 

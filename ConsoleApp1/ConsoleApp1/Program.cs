@@ -1,13 +1,11 @@
 ﻿using ConsoleApp1;
 
-var container = new Container(10.0, 10, 1000, 120, 'L', 12000)
-{
-Cargoweight = 12.0
-};
+LiquidContainer LiquidContainer01 = new LiquidContainer(20, 30, 300, 2000,2000, true);
 
 
 
-    int? a = 1;
+
+int? a = 1;
 a = null;
 
 Exception? ex = new Exception();
