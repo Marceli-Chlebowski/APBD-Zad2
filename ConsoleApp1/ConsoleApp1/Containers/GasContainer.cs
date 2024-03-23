@@ -47,6 +47,24 @@ public class GasContainer : Container, IHazardNotifier
         Cargoweight += cargoweight;
         Console.WriteLine("Current cargo weigt is " + Cargoweight);
     }
+    public void ShowContainerInfo()
+    {
+        Console.WriteLine(
+            "Name: " + Name +
+            "\n" +
+            "Cargo Weight: " + Cargoweight  + 
+            "\n" +
+            "Height: " + Height + 
+            "\n" +
+            "Total Weight: " + (Weight+Cargoweight) +
+            "\n" +
+            "Depth: " + Deep + 
+            "\n" +
+            "Cargo Weight Maximum: " + MaxCargo +
+            "\n" +
+            "Pressure : " + Preassure
+        );
+    }
     
 }
 
