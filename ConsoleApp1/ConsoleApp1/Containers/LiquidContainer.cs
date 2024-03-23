@@ -1,7 +1,6 @@
 ﻿using ConsoleApp1.exceptios;
 using ConsoleApp1.interfaces;
-
-namespace ConsoleApp1;
+namespace ConsoleApp1.Containers;
 
 public class LiquidContainer : Container, IHazardNotifier
 {

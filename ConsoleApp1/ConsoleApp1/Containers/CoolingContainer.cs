@@ -1,5 +1,5 @@
 ﻿using ConsoleApp1.exceptios;
-namespace ConsoleApp1;
+namespace ConsoleApp1.Containers;
 
 public class CoolingContainer : Container
 {
