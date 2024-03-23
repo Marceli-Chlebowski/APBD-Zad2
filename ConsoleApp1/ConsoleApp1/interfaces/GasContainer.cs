@@ -4,7 +4,7 @@ namespace ConsoleApp1.interfaces;
 
 public class GasContainer : Container, IHazardNotifier
 {
-    public double preassure;
+    public double Preassure { get; set; }
     public string Name;
     public readonly int Count = 1;
     
@@ -21,7 +21,7 @@ public class GasContainer : Container, IHazardNotifier
     
     public GasContainer(double cargoweight, double height, double weight, double deep, double maxCargo, double preassure) : base(cargoweight, height, weight, deep, maxCargo)
     {
-        this.preassure = preassure;
+        Preassure = preassure;
         Name = Nameset(containertype: 'G');
         Count++;
     }
@@ -35,16 +35,9 @@ public class GasContainer : Container, IHazardNotifier
     public new void Unload()
     {
         Cargoweight = Cargoweight * 0.05;
+        Console.WriteLine("Current cargo weigt is " + Cargoweight);
     }
-
-    public override void Load(double cargoweight)
-    {
-        if (cargoweight + Cargoweight > MaxCargo)
-        {
-            throw new OverfillException();
-        }
-        Cargoweight += cargoweight;
-    }
+    
 }
 
 

@@ -15,10 +15,10 @@ public class Container : IContainer
     public Container(double cargoweight, double height, double weight, double deep, double maxCargo)
     {
         Cargoweight = cargoweight;
-        this.Height = height;
-        this.Weight = weight;
-        this.Deep = deep;
-        this.MaxCargo = maxCargo;
+        Height = height;
+        Weight = weight;
+        Deep = deep;
+        MaxCargo = maxCargo;
     }
 
 //funkcje przeladunkowa 
@@ -28,6 +28,7 @@ public class Container : IContainer
             throw new NotImplementedException();
 
         Cargoweight = 0;
+        Console.WriteLine("Current cargo weigt is " + Cargoweight);
     }
 
     public virtual void Load(double cargoweight)
@@ -37,5 +38,6 @@ public class Container : IContainer
             throw new OverfillException();
         }
         Cargoweight += cargoweight;
+        Console.WriteLine("Current cargo weigt is " + Cargoweight);
     }
 }

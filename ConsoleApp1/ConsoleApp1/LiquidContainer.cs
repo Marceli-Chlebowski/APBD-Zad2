@@ -55,5 +55,6 @@ public class LiquidContainer : Container, IHazardNotifier
         }
 
         Cargoweight += cargoweight;
+        Console.WriteLine("Current cargo weigt is " + Cargoweight);
     }
 }
