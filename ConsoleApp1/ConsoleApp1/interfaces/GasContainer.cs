@@ -37,6 +37,16 @@ public class GasContainer : Container, IHazardNotifier
         Cargoweight = Cargoweight * 0.05;
         Console.WriteLine("Current cargo weigt is " + Cargoweight);
     }
+    public virtual void Load(double cargoweight)
+    {
+        if (cargoweight + Cargoweight > MaxCargo)
+        {
+            Danger();
+            throw new OverfillException();
+        }
+        Cargoweight += cargoweight;
+        Console.WriteLine("Current cargo weigt is " + Cargoweight);
+    }
     
 }
 

@@ -25,7 +25,7 @@ public class Container : IContainer
     public void Unload()
     {
         if (Cargoweight == 0)
-            throw new NotImplementedException();
+            Console.WriteLine("Cargo is empty");
 
         Cargoweight = 0;
         Console.WriteLine("Current cargo weigt is " + Cargoweight);
