@@ -1,6 +1,5 @@
 ﻿using ConsoleApp1.Containers;
-
-namespace ConsoleApp1;
+namespace ConsoleApp1.Ships;
 
 public class Ship
 {

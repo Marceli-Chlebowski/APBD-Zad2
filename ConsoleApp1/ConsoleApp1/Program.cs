@@ -1,5 +1,6 @@
 ﻿using ConsoleApp1;
 using ConsoleApp1.Containers;
+using ConsoleApp1.Ships;
 
 
 LiquidContainer LiquidContainer01 = new LiquidContainer(20, 30, 300, 2000,2000, true);
