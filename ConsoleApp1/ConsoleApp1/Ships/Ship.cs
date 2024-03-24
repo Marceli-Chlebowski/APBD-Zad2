@@ -6,7 +6,7 @@ public class Ship
     public double Speed;
     public double maxContainerCount;
     public double maxLoad;
-    private List<Container> containersList = new List<Container>();
+    public List<Container> containersList = new List<Container>();
     public String Name;
     
     public Ship(double speed, double maxContainerCount, double maxLoad, string name)
