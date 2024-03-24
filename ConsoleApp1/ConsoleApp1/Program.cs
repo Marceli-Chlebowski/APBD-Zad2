@@ -1,101 +1,24 @@
-﻿using ConsoleApp1.Containers;
+﻿using ConsoleApp1;
+using ConsoleApp1.Containers;
 using ConsoleApp1.Ships;
 
-namespace ConsoleApp1
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // Inicjalizacja statku
-            Ship ship = new Ship(25, 10, 5000, "CargoShip");
 
-            bool exit = false;
-            while (!exit)
-            {
-                Console.WriteLine("=== Cargo Management System ===");
-                Console.WriteLine("1. Dodaj kontener");
-                Console.WriteLine("2. Usuń kontener");
-                Console.WriteLine("3. Wyświetl informacje o statku");
-                Console.WriteLine("4. Zakończ");
-
-                Console.Write("Wybierz opcję: ");
-                string input = Console.ReadLine();
-
-                switch (input)
-                {
-                    case "1":
-                        AddContainer(ship);
-                        break;
-                    case "2":
-                        RemoveContainer(ship);
-                        break;
-                    case "3":
-                        ShowShipInfo(ship);
-                        break;
-                    case "4":
-                        exit = true;
-                        break;
-                    default:
-                        Console.WriteLine("Nieprawidłowa opcja. Spróbuj ponownie.");
-                        break;
-                }
-
-                Console.WriteLine();
-            }
-        }
-
-        static void AddContainer(Ship ship)
-        {
-            Console.WriteLine("Podaj dane kontenera:");
-
-            // Wprowadzanie danych kontenera
-            Console.Write("Waga ładunku: ");
-            double cargoWeight = double.Parse(Console.ReadLine());
-
-            Console.Write("Wysokość: ");
-            double height = double.Parse(Console.ReadLine());
-
-            Console.Write("Szerokość: ");
-            double width = double.Parse(Console.ReadLine());
-
-            Console.Write("Głębokość: ");
-            double depth = double.Parse(Console.ReadLine());
-
-            Console.Write("Maksymalna waga ładunku: ");
-            double maxCargo = double.Parse(Console.ReadLine());
-
-            // Tworzenie kontenera i dodawanie go do statku
-            Container container = new Container(cargoWeight, height, width, depth, maxCargo);
-            ship.loadContaier(container);
-            Console.WriteLine("Kontener został dodany do statku.");
-        }
-
-        static void RemoveContainer(Ship ship)
-        {
-            Console.WriteLine("Który kontener chcesz usunąć?");
-            Console.Write("Podaj nazwę kontenera: ");
-            string containerName = Console.ReadLine();
-
-            // Usuwanie kontenera ze statku
-            foreach (var container in ship.containersList)
-            {
-                if (container.Name == containerName)
-                {
-                    ship.unloadContaier(container);
-                    Console.WriteLine("Kontener został usunięty ze statku.");
-                    return;
-                }
-            }
-
-            Console.WriteLine("Nie znaleziono kontenera o podanej nazwie.");
-        }
-
-        static void ShowShipInfo(Ship ship)
-        {
-            Console.WriteLine("Informacje o statku:");
-            ship.ShowShipInfo();
-        }
-    }
-}
-
+LiquidContainer LiquidContainer01 = new LiquidContainer(20, 30, 300, 2000,2000, true);
+GasContainer GasContainer01 = new GasContainer(200, 200, 20, 200, 200, 200);
+CoolingContainer CoolingContainer01 = new CoolingContainer(200, 200, 200, 200, 2000, "bananas", 20);
+LiquidContainer LiquidContainer02 = new LiquidContainer(20, 30, 300, 2000,2000, true);
+GasContainer GasContainer02 = new GasContainer(200, 200, 20, 200, 200, 200);
+CoolingContainer CoolingContainer02 = new CoolingContainer(200, 200, 200, 200, 2000, "ice cream", 20);
+LiquidContainer01.ShowContainerInfo();
+LiquidContainer02.ShowContainerInfo();
+GasContainer01.ShowContainerInfo();
+GasContainer02.ShowContainerInfo();
+CoolingContainer01.ShowContainerInfo();
+CoolingContainer02.ShowContainerInfo();
+Ship ship01 = new Ship(20, 20, 400000, "Czarna Perla");
+Ship ship02 = new Ship(20, 20, 400000, "Latajacy hoe-lender");
+ship01.loadContaier(LiquidContainer01);
+ship01.loadContaier(LiquidContainer02);
+ship01.loadContaier(CoolingContainer01);
+ship01.loadContaier(GasContainer02);
+ship01.ShowShipInfo();
