@@ -1,4 +1,5 @@
-﻿using ConsoleApp1.Containers;
+﻿using ConsoleApp1;
+using ConsoleApp1.Containers;
 
 
 LiquidContainer LiquidContainer01 = new LiquidContainer(20, 30, 300, 2000,2000, true);
@@ -13,4 +14,10 @@ GasContainer01.ShowContainerInfo();
 GasContainer02.ShowContainerInfo();
 CoolingContainer01.ShowContainerInfo();
 CoolingContainer02.ShowContainerInfo();
-
+Ship ship01 = new Ship(20, 20, 400000, "Czarna Perla");
+Ship ship02 = new Ship(20, 20, 400000, "Latajacy hoe-lender");
+ship01.loadContaier(LiquidContainer01);
+ship01.loadContaier(LiquidContainer02);
+ship01.loadContaier(CoolingContainer01);
+ship01.loadContaier(GasContainer02);
+ship01.ShowShipInfo();

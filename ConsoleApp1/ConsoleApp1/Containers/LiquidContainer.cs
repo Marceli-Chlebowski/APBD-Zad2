@@ -74,4 +74,9 @@ public class LiquidContainer : Container, IHazardNotifier
             "Dangerous tag: " + isDangerous
         );
     }
+    
+    public override string ToString()
+    {
+        return Name;
+    }
 }

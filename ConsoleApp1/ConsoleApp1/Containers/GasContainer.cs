@@ -66,7 +66,8 @@ public class GasContainer : Container, IHazardNotifier
         );
     }
     
+    public override string ToString()
+    {
+        return Name;
+    }
 }
-
-
-

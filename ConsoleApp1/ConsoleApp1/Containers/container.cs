@@ -10,6 +10,8 @@ public class Container : IContainer
     public double Weight { get; set; }
     public double Deep { get; set; }
     public double MaxCargo { get; set; }
+    public string Name;
+    private static int Count = 1;
 
     public Container(double cargoweight, double height, double weight, double deep, double maxCargo)
     {
@@ -18,7 +20,20 @@ public class Container : IContainer
         Weight = weight;
         Deep = deep;
         MaxCargo = maxCargo;
+        Name = Nameset(containertype: 'B', Count);
+        Count++;
     }
+    
+    //funkcja namest
+    public string Nameset(char containertype, int count)
+    {
+        string name = "KON-";
+        string type = Convert.ToString(containertype);
+        name += type;
+        name += "-";
+        name += Convert.ToString(count);
+        return name;
+    } 
 
 //funkcje przeladunkowa 
     public void Unload()
@@ -53,5 +68,10 @@ public class Container : IContainer
             "\n" +
             "Cargo Weight Maximum: " + MaxCargo
             );
+    }
+
+    public override string ToString()
+    {
+        return Name;
     }
 }

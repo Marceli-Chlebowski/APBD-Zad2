@@ -119,4 +119,9 @@ public class CoolingContainer : Container
             "Temperature: " + Temperature
         );
     }
+    
+    public override string ToString()
+    {
+        return Name;
+    }
 }
